@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18121" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0k0-0I-1ti">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18092"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--アルバム-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MusicPlayer210219" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIV-1a-hql">
+                                <rect key="frame" x="144.5" y="473" width="31" height="30"/>
+                                <state key="normal" title="再生"/>
+                                <connections>
+                                    <action selector="pushPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="00U-zt-XlI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRn-vT-rNI">
+                                <rect key="frame" x="245.5" y="473" width="30" height="30"/>
+                                <state key="normal" title="次"/>
+                                <connections>
+                                    <action selector="pushNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zOj-AX-9dI"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QWp-Jl-B3O">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="457"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="TJ1-cj-cUx">
+                                        <rect key="frame" x="0.0" y="24.5" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TJ1-cj-cUx" id="iEY-iC-j8Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zrF-UF-tzX"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="I5r-oe-3Fc"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDE-5e-RHC">
+                                <rect key="frame" x="44.5" y="473" width="30" height="30"/>
+                                <state key="normal" title="前"/>
+                                <connections>
+                                    <action selector="pushPrevious:" destination="BYZ-38-t0r" eventType="touchUpInside" id="abI-aJ-5IJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kIV-1a-hql" firstAttribute="top" secondItem="QWp-Jl-B3O" secondAttribute="bottom" constant="16" id="6rH-pU-iei"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IDE-5e-RHC" secondAttribute="bottom" constant="16" id="7W0-ip-9xI"/>
+                            <constraint firstItem="QWp-Jl-B3O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ckf-8K-dxP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kIV-1a-hql" secondAttribute="bottom" constant="16" id="FhR-KK-oji"/>
+                            <constraint firstItem="kIV-1a-hql" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UMH-TD-cvg"/>
+                            <constraint firstItem="kIV-1a-hql" firstAttribute="leading" secondItem="IDE-5e-RHC" secondAttribute="trailing" constant="70" id="Y14-a5-3qV"/>
+                            <constraint firstItem="QWp-Jl-B3O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cs5-sI-2fI"/>
+                            <constraint firstItem="QWp-Jl-B3O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="db5-nh-VQo"/>
+                            <constraint firstItem="vRn-vT-rNI" firstAttribute="leading" secondItem="kIV-1a-hql" secondAttribute="trailing" constant="70" id="dqh-bM-vRe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vRn-vT-rNI" secondAttribute="bottom" constant="16" id="gIx-1v-1Cf"/>
+                            <constraint firstItem="QWp-Jl-B3O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iKV-Db-QoB"/>
+                            <constraint firstItem="QWp-Jl-B3O" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rsL-fN-OxM"/>
+                            <constraint firstItem="QWp-Jl-B3O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="t1I-pK-wXu"/>
+                            <constraint firstItem="QWp-Jl-B3O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uHZ-Wn-gRC"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="アルバム" image="folder.fill" catalog="system" id="NNi-Pl-Nfl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1179.375" y="-154.22535211267606"/>
+        </scene>
+        <!--プレイリスト-->
+        <scene sceneID="ybR-1l-CHU">
+            <objects>
+                <viewController id="mZ0-tK-K4q" customClass="PlaylistViewController" customModule="MusicPlayer210219" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y2g-6z-uM0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGn-GM-HjI">
+                                <rect key="frame" x="144.5" y="473" width="31" height="30"/>
+                                <state key="normal" title="再生"/>
+                                <connections>
+                                    <action selector="pushPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GLk-DC-SCd"/>
+                                    <action selector="pushPlay:" destination="mZ0-tK-K4q" eventType="touchUpInside" id="Iag-6X-sZH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adN-wg-RiM">
+                                <rect key="frame" x="44.5" y="473" width="30" height="30"/>
+                                <state key="normal" title="前"/>
+                                <connections>
+                                    <action selector="pushPrevious:" destination="mZ0-tK-K4q" eventType="touchUpInside" id="fOC-ep-bbQ"/>
+                                    <action selector="pushPrevious:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hGx-oW-s58"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIR-qn-ViT">
+                                <rect key="frame" x="245.5" y="473" width="30" height="30"/>
+                                <state key="normal" title="次"/>
+                                <connections>
+                                    <action selector="pushNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hyY-0g-olf"/>
+                                    <action selector="pushNext:" destination="mZ0-tK-K4q" eventType="touchUpInside" id="xpE-IS-6gW"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ixL-V3-WhD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="457"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="D66-4h-CiY">
+                                        <rect key="frame" x="0.0" y="24.5" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D66-4h-CiY" id="9t3-Wp-gsy">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mZ0-tK-K4q" id="jrW-FT-vPo"/>
+                                    <outlet property="delegate" destination="mZ0-tK-K4q" id="RUu-DK-MpO"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MFt-PU-7P0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MFt-PU-7P0" firstAttribute="bottom" secondItem="EGn-GM-HjI" secondAttribute="bottom" constant="16" id="4Qn-I2-Ibt"/>
+                            <constraint firstItem="MFt-PU-7P0" firstAttribute="bottom" secondItem="adN-wg-RiM" secondAttribute="bottom" constant="16" id="5DY-Ad-IoJ"/>
+                            <constraint firstItem="NIR-qn-ViT" firstAttribute="leading" secondItem="EGn-GM-HjI" secondAttribute="trailing" constant="70" id="QDt-9b-c6g"/>
+                            <constraint firstItem="EGn-GM-HjI" firstAttribute="top" secondItem="ixL-V3-WhD" secondAttribute="bottom" constant="16" id="UPt-dc-kih"/>
+                            <constraint firstItem="ixL-V3-WhD" firstAttribute="leading" secondItem="MFt-PU-7P0" secondAttribute="leading" id="XCU-6M-19Z"/>
+                            <constraint firstItem="EGn-GM-HjI" firstAttribute="leading" secondItem="adN-wg-RiM" secondAttribute="trailing" constant="70" id="dVK-6s-IP8"/>
+                            <constraint firstItem="EGn-GM-HjI" firstAttribute="centerX" secondItem="y2g-6z-uM0" secondAttribute="centerX" id="e4D-Dk-0iI"/>
+                            <constraint firstItem="MFt-PU-7P0" firstAttribute="trailing" secondItem="ixL-V3-WhD" secondAttribute="trailing" id="jl2-CJ-w36"/>
+                            <constraint firstItem="ixL-V3-WhD" firstAttribute="top" secondItem="MFt-PU-7P0" secondAttribute="top" id="mTv-jE-EEx"/>
+                            <constraint firstItem="MFt-PU-7P0" firstAttribute="bottom" secondItem="NIR-qn-ViT" secondAttribute="bottom" constant="16" id="tun-A3-bE0"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="プレイリスト" image="music.note.list" catalog="system" id="Sq1-ow-aBh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Rw-tO-9ya" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="-154"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dWv-QI-x2f">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0k0-0I-1ti" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3MN-vt-yNF">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Goy-5x-S8A"/>
+                        <segue destination="mZ0-tK-K4q" kind="relationship" relationship="viewControllers" id="web-FZ-cse"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sdr-IS-D0p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="358" y="-154"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="folder.fill" catalog="system" width="128" height="97"/>
+        <image name="music.note.list" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
