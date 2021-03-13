@@ -13,6 +13,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     var player: MPMusicPlayerController!
     var albumCount = 0
     var albumList: [MPMediaItemCollection]!
+    @IBOutlet weak var playButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         player.setQueue(with: albumList[indexPath.row])
+        playButton.setImage(UIImage(systemName: "pause.fill"), for: UIControl.State.normal)
         player.play()
     }
 
@@ -54,8 +56,10 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         let playStatus = player.playbackState
         switch playStatus {
             case .playing:
+                playButton.setImage(UIImage(systemName: "play.fill"), for: UIControl.State.normal)
                 player.pause()
             default:
+                playButton.setImage(UIImage(systemName: "pause.fill"), for: UIControl.State.normal)
                 player.play()
         }
     }

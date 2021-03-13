@@ -14,6 +14,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
     var player: MPMusicPlayerController!
     var albumCount = 0
     var albumArray: [MPMediaItemCollection]!
+    @IBOutlet weak var playButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +64,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         player.setQueue(with: albumArray[indexPath.row])
+        playButton.setImage(UIImage(systemName: "pause.fill"), for: UIControl.State.normal)
         player.play()
     }
 
@@ -88,8 +90,10 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
         let playStatus = player.playbackState
         switch playStatus {
             case .playing:
+                playButton.setImage(UIImage(systemName: "play.fill"), for: UIControl.State.normal)
                 player.pause()
             default:
+                playButton.setImage(UIImage(systemName: "pause.fill"), for: UIControl.State.normal)
                 player.play()
         }
     }
