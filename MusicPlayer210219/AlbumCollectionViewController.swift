@@ -1,5 +1,5 @@
 //
-//  PlaylistCollectionViewController.swift
+//  AlbumCollectionViewController.swift
 //  MusicPlayer210219
 //
 //  Created by Osamu Miyazawa on 2021/03/08.
@@ -8,7 +8,7 @@
 import UIKit
 import MediaPlayer
 
-class PlaylistCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class AlbumCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var player: MPMusicPlayerController!
