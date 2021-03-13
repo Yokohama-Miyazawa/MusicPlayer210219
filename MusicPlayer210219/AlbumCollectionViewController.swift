@@ -14,6 +14,8 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
     var player: MPMusicPlayerController!
     var albumCount = 0
     var albumArray: [MPMediaItemCollection]!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var repeatButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,7 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
         albumArray = albums
         albumCount = albums!.count
         player.setQueue(with: albums![0])
+        playButton.isEnabled = false
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -63,7 +66,9 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         player.setQueue(with: albumArray[indexPath.row])
+        playButton.setImage(UIImage(systemName: "pause.fill"), for: UIControl.State.normal)
         player.play()
+        playButton.isEnabled = true
     }
 
 
@@ -88,8 +93,10 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
         let playStatus = player.playbackState
         switch playStatus {
             case .playing:
+                playButton.setImage(UIImage(systemName: "play.fill"), for: UIControl.State.normal)
                 player.pause()
             default:
+                playButton.setImage(UIImage(systemName: "pause.fill"), for: UIControl.State.normal)
                 player.play()
         }
     }
@@ -107,5 +114,22 @@ class AlbumCollectionViewController: UIViewController, UICollectionViewDataSourc
         player.skipToNextItem()
     }
     
-
+    @IBAction func pushRepeat(_ sender: Any) {
+        let repeatStatus = player.repeatMode
+        switch repeatStatus {
+            case .all:
+                player.repeatMode = .one
+                repeatButton.setImage(UIImage(systemName: "repeat.1"), for: UIControl.State.normal)
+                repeatButton.backgroundColor = UIColor.cyan
+            case .one:
+                player.repeatMode = .none
+                repeatButton.setImage(UIImage(systemName: "repeat"), for: UIControl.State.normal)
+                repeatButton.backgroundColor = UIColor.clear
+            default:
+                player.repeatMode = .all
+                repeatButton.setImage(UIImage(systemName: "repeat"), for: UIControl.State.normal)
+                repeatButton.backgroundColor = UIColor.cyan
+        }
+    }
+    
 }
