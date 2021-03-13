@@ -15,6 +15,7 @@
 		85ACE5BD25DF675B0086E411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85ACE5BB25DF675B0086E411 /* LaunchScreen.storyboard */; };
 		85ACE5C825DF675B0086E411 /* MusicPlayer210219Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ACE5C725DF675B0086E411 /* MusicPlayer210219Tests.swift */; };
 		85ACE5D325DF675B0086E411 /* MusicPlayer210219UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ACE5D225DF675B0086E411 /* MusicPlayer210219UITests.swift */; };
+		85BD449325F5FA54000B43DF /* PlaylistCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BD449225F5FA54000B43DF /* PlaylistCollectionViewController.swift */; };
 		85F28DEA25F0BAD9008012DA /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F28DE925F0BAD9008012DA /* PlaylistViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		85ACE5CE25DF675B0086E411 /* MusicPlayer210219UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicPlayer210219UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85ACE5D225DF675B0086E411 /* MusicPlayer210219UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer210219UITests.swift; sourceTree = "<group>"; };
 		85ACE5D425DF675B0086E411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85BD449225F5FA54000B43DF /* PlaylistCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCollectionViewController.swift; sourceTree = "<group>"; };
 		85F28DE925F0BAD9008012DA /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 				85ACE5B225DF675A0086E411 /* SceneDelegate.swift */,
 				85ACE5B425DF675A0086E411 /* ViewController.swift */,
 				85ACE5B625DF675A0086E411 /* Main.storyboard */,
+				85BD449225F5FA54000B43DF /* PlaylistCollectionViewController.swift */,
 				85F28DE925F0BAD9008012DA /* PlaylistViewController.swift */,
 				85ACE5B925DF675B0086E411 /* Assets.xcassets */,
 				85ACE5BB25DF675B0086E411 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 				85ACE5B525DF675A0086E411 /* ViewController.swift in Sources */,
 				85ACE5B125DF675A0086E411 /* AppDelegate.swift in Sources */,
 				85ACE5B325DF675A0086E411 /* SceneDelegate.swift in Sources */,
+				85BD449325F5FA54000B43DF /* PlaylistCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
